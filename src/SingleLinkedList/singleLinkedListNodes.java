@@ -30,4 +30,9 @@ public class SingleLinkedListNodes<E> {
 		}
 		return head;
 	}
+	
+	public void peekAt(int num) {
+		Node<E> temp = at(num);
+		System.out.println(temp.getData());
+	}
 }
