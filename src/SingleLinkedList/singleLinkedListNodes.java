@@ -3,15 +3,45 @@ package SingleLinkedList;
 public class SingleLinkedListNodes<E> {
 	Node<E> head;
 	
+
+	public SingleLinkedListNodes(){
+		this.head = null;
+	}
+	
+	public SingleLinkedListNodes(E num){
+		this.head = new Node<>(num);
+	}
+	
 	public SingleLinkedListNodes(E[] arr) {
-		if(arr== null) this.head = null;
+		makeLinkedList(arr);
+	}
+	
+	
+	public void makeLinkedList(E[] arr){
 		
-		this.head = new Node<E>(arr[0]);
-		Node<E> temp = this.head;
-		for(int i = 1; i < arr.length;i++) {
-			temp.next = new Node<E>(arr[i]);
-			temp = temp.next; 
+		if(arr == null) this.head = null;
+		else {
+			this.head = new Node<E>(arr[0]);
+			Node<E> temp = this.head;
+			for(int i = 1; i < arr.length;i++) {
+				temp.next = new Node<E>(arr[i]);
+				temp = temp.next; 
+			
+			}
 		}
+	}
+	
+	public void addHead(E num) {
+		Node<E> temp = new Node<>(num);
+		Node<E> ite = this.head; 
+		this.head = temp;
+		temp.next = ite;  
+	}
+	
+	public void addLast(E num) {
+		Node<E> iterator = this.head;
+		while(iterator.next != null) iterator = iterator.next;
+		iterator.next = new Node<>(num);
 	}
 	
 	public Node<E> at(int num){
@@ -48,6 +78,7 @@ public class SingleLinkedListNodes<E> {
 	}
 	
 	public String toString() {
+		if(this.head == null) return null;
 		Node<E> ite = this.head;
 		String totalString = "[";
 		while(ite != null) {
