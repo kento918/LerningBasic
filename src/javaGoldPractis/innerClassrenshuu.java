@@ -13,7 +13,7 @@ class MainInner {
                 ite.next = new MainInner(). new Inner2(num);
                 ite = ite.next;
             }
-            return inner;
+            return inner.next;
         }
     }
     
@@ -29,14 +29,20 @@ class MainInner {
     
     
     public static void mainInner(){
-//        Main.Inner head = new Main.Inner();
-//        int[] a = {1,2,3};
-//        Main.Inner2 newhead = head.makeLinkedList(a);
-//        Main.Inner2 iterator = newhead;
-//        while(iterator != null){
-//            System.out.println(iterator.data);
-//            iterator = iterator.next;
-//        }
-//        // System.out.println(head);
+        MainInner.Inner head = new MainInner.Inner();
+        int[] a = {1,2,3};
+        MainInner.Inner2 newhead = Inner.makeLinkedList(a);
+        MainInner.Inner2 iterator = newhead;
+        while(iterator != null){
+            System.out.println(iterator.data);
+            iterator = iterator.next;
+        }
+        // System.out.println(head);
     }
+}
+
+public class innerClassrenshuu{
+	public static void innerUser() {
+		MainInner.mainInner();
+	}
 }
