@@ -51,9 +51,4 @@ public class useSingleLinkedListArgo<E> {
 		
 		return mergeNode;
 	}
-	
-	public static void test() {
-		
-	}
-	
 }
