@@ -26,6 +26,7 @@ public class useSingleLinkedListArgo<E> {
 	
 	public SingleLinkedListNodes<Integer> mergeTwoSortedLinkedLists(SingleLinkedListNodes<Integer> a , SingleLinkedListNodes<Integer> b){
 		if(a.head.getData() == null) return b;
+		
 		if(b.head.getData() == null) return a;
 		SingleLinkedListNodes<Integer> mergeNode = new SingleLinkedListNodes<Integer>(0);
 		Node<Integer> head = mergeNode.head;
@@ -49,6 +50,9 @@ public class useSingleLinkedListArgo<E> {
 		mergeNode.head = head.next;
 		
 		return mergeNode;
+	}
+	
+	public static void test() {
 		
 	}
 	
