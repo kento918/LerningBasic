@@ -1,5 +1,4 @@
-import java.util.*;
-
+package javaGoldPractis;
 class yoyaku extends Thread{
     static int zaseki;
     synchronized static void yoyaku(){
@@ -32,7 +31,7 @@ class User implements Runnable{
     }
 }
 
-public class Main {
+public class parallelProcessing {
     public static void main(String[] args) throws Exception {
         yoyaku.zaseki = 5;
         yoyaku ys = new yoyaku();

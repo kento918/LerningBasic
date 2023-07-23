@@ -1,5 +1,4 @@
-import java.util.*;
-
+package javaGoldPractis;
 interface changeName{
     void printName();
 }
@@ -8,7 +7,7 @@ interface addName{
     String conpareName(String name);
 }
 
-public class Main {
+public class Mainlambda {
     public static void main(String[] args) throws Exception {
         // changeName name = new changeName(){
         //     @Override
