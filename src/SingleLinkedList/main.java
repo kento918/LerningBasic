@@ -1,5 +1,4 @@
-import SingleLinkedList.SingleLinkedListNodes;
-import SingleLinkedList.useSingleLinkedListArgo;
+package SingleLinkedList;
 
 /*
  * This class executes all packages.
@@ -21,8 +20,6 @@ public class main {
 		useSingleLinkedListArgo<Integer> meargeHead = new useSingleLinkedListArgo<>(null);
 		meargeHead.setRoot(meargeHead.mergeTwoSortedLinkedLists(head1,head2));
 		meargeHead.printRoot();
-		
-		javaGoldPractis.innerClassrenshuu.innerUser();
 		
 
 	}
