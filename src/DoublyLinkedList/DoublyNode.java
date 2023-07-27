@@ -38,10 +38,48 @@ public class DoublyNode<E> {
 	}
 }
 
+class DoublyLinkedNodes<E> {
+	DoublyNode<E> head;
+
+	public DoublyLinkedNodes(DoublyNode<E> head) {
+		this.head = head;
+	}
+
+	public DoublyNode<E> at(int num) {
+		DoublyNode<E> iterator = this.head;
+		for (int i = 1; i < num; i++) iterator = iterator.next;
+		return iterator;
+	}
+
+	public void deleteAt(int num) {
+		DoublyNode<E> iterator = this.head;
+		if(num <= 1) {
+			iterator = iterator.next; 
+			iterator.prev = null;
+		}
+		
+		for (int i = 1; i < (num - 1); i++) iterator = iterator.next;
+		
+		iterator.next = iterator.next.next;
+		iterator.next.prev = iterator;
+		
+	}
+	
+	public void printNodes() {
+		DoublyNode<E> iterator = this.head;
+		while(iterator.next != null) {
+			System.out.print(iterator.data + " , ");
+			iterator = iterator.next;
+		}
+		System.out.print(iterator.data);
+	}
+
+}
+
 class Main {
 	public static void main(String[] args) {
 		DoublyNode<Integer> nodes = new DoublyNode<Integer>(
-				new Integer[] { 1, 2, 3, 4, 5, 6, 76, 8, 31, 32, 5, 4323, });
+				new Integer[] { 1, 2, 3, 4, 5, 6, 76, 8, 31, 32, 5, 4323, 555});
 
 		DoublyNode<Integer> iterator = nodes;
 
@@ -53,10 +91,21 @@ class Main {
 		System.out.println(iterator.data);
 		System.out.println();
 
-		while (iterator != null) {
+		while (iterator.prev != null) {
 			System.out.print(iterator.data + " , ");
 			iterator = iterator.prev;
 		}
+		System.out.println(iterator.data);
+		System.out.println();
+
+		DoublyLinkedNodes<Integer> head = new DoublyLinkedNodes<>(iterator);
+
+		System.out.println(head.head.data);
+		System.out.println();
+		
+		head.deleteAt(3);
+		
+		head.printNodes();
 
 	}
 
