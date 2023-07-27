@@ -1,35 +1,35 @@
 package DoublyLinkedList;
 
-public class DoublyLinkedNode<E> {
+public class DoublyNode<E> {
 
 	E data;
-	DoublyLinkedNode<E> prev;
-	DoublyLinkedNode<E> next;
+	DoublyNode<E> prev;
+	DoublyNode<E> next;
 
-	public DoublyLinkedNode(E data) {
+	public DoublyNode(E data) {
 		this.data = data;
 		this.prev = null;
 		this.next = null;
 	}
 
-	public DoublyLinkedNode(E[] datas) {
-		DoublyLinkedNode<E> first = createNodeFactry(datas);
+	public DoublyNode(E[] datas) {
+		DoublyNode<E> first = createNodeFactry(datas);
 		if (first != null) {
 			this.data = (E) first.data;
-			this.next = (DoublyLinkedNode<E>) first.next;
+			this.next = (DoublyNode<E>) first.next;
 			this.prev = null;
 		}
 	}
 
-	public DoublyLinkedNode<E> createNodeFactry(E[] datas) {
+	public DoublyNode<E> createNodeFactry(E[] datas) {
 		if (datas.length == 0)
 			return null;
 
-		DoublyLinkedNode<E> first = new DoublyLinkedNode<>(datas[0]);
-		DoublyLinkedNode<E> iterator = first;
+		DoublyNode<E> first = new DoublyNode<>(datas[0]);
+		DoublyNode<E> iterator = first;
 
 		for (int i = 1; i < datas.length; i++) {
-			iterator.next = new DoublyLinkedNode<E>(datas[i]);
+			iterator.next = new DoublyNode<E>(datas[i]);
 			iterator.next.prev = iterator;
 			iterator = iterator.next;
 		}
@@ -40,10 +40,10 @@ public class DoublyLinkedNode<E> {
 
 class Main {
 	public static void main(String[] args) {
-		DoublyLinkedNode<Integer> nodes = new DoublyLinkedNode<Integer>(
+		DoublyNode<Integer> nodes = new DoublyNode<Integer>(
 				new Integer[] { 1, 2, 3, 4, 5, 6, 76, 8, 31, 32, 5, 4323, });
 
-		DoublyLinkedNode<Integer> iterator = nodes;
+		DoublyNode<Integer> iterator = nodes;
 
 		while (iterator.next != null) {
 			System.out.print(iterator.data + " , ");
