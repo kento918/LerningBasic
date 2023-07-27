@@ -1,17 +1,20 @@
 package SingleLinkedList;
 
-public class Node<E>{
-	private int data;
+public class Node<E> {
+	private E data;
 	Node<E> next;
-	public Node(int data) {
+
+	public Node(E data) {
 		this.setData(data);
 		this.next = null;
 	}
-	public int getData() {
+
+	public E getData() {
 		return data;
 	}
-	public void setData(int data) {
+
+	public void setData(E data) {
 		this.data = data;
 	}
-	
+
 }
