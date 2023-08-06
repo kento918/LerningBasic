@@ -1,4 +1,6 @@
-import java.util.function.*;
+package lambda;
+
+import java.util.function.Function;
 
 class higherOrderFunction{
     public static void main(String[] args){
