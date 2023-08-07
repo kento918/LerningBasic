@@ -35,5 +35,25 @@ public class streamPractis {
         System.out.println(list2.stream().count());
         list2.stream()
               .forEach(z-> System.out.print(z + " "));
+
+
+        Stream chars1 = Stream.of("b");
+        Stream chars2 = Stream.of("a");
+        // Stream chars = はあくまでも代入なのでforEachにprintlnが入っていると返り値がなくてエラーになってしまうので注意
+        Stream.concat(chars1 , chars2)
+              .filter(x -> x != "a")
+              .forEach(x -> System.out.println(x));
+
+        List<String> listStr = new ArrayList<>();
+        for(int i = (int)'a'; i<=(int)'z';i++) listStr.add(""+(char)i);
+        
+        System.out.println(listStr);
+
+        listStr.stream()
+               .filter(x -> (int)x.charAt(0) %2 != 0)
+               .filter(x -> (int)x.charAt(0) < 100)
+               .forEach(System.out::print);
+
+        
     }
 }
