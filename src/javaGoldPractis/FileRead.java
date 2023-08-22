@@ -1,3 +1,4 @@
+
 package javaGoldPractis;
 
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ public class FileRead {
             while((line = br.readLine()) != null){
                 System.out.println(line);
             }
+
             if(br != null) br.close();
         }catch(FileNotFoundException e){
             System.out.println("fail not found");

@@ -1,0 +1,44 @@
+import java.util.*;
+
+
+
+class Main {
+    
+    String item;
+    
+    static class Inner{
+        static Main.Inner2 inner = new Main().new Inner2(0);
+        
+        public static Main.Inner2 makeLinkedList(int[] a){
+            Main.Inner2 ite = inner;
+            for(int num : a) {
+                ite.next = new Main(). new Inner2(num);
+                ite = ite.next;
+            }
+            return inner;
+        }
+    }
+    
+    public class Inner2{
+        private int data;
+        private Inner2 next;
+        
+        Inner2(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    
+    
+    public static void main(String[] args) throws Exception {
+        Main.Inner head = new Main.Inner();
+        int[] a = {1,2,3};
+        Main.Inner2 newhead = head.makeLinkedList(a);
+        Main.Inner2 iterator = newhead;
+        while(iterator != null){
+            System.out.println(iterator.data);
+            iterator = iterator.next;
+        }
+        // System.out.println(head);
+    }
+}
