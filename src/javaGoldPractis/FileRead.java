@@ -1,24 +1,32 @@
-import java.io.*;
-import java.util.*;
 
-public class Main {
+package javaGoldPractis;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileRead {
     public static void main(String[] args) throws Exception {
         try{
-            br = new BufferedReader(new FileReader("File1"));
+            BufferedReader br = new BufferedReader(new FileReader("File1"));
             String line;
             while((line = br.readLine()) != null){
                 System.out.println(line);
             }
+
+            if(br != null) br.close();
         }catch(FileNotFoundException e){
             System.out.println("fail not found");
-        }catch(IOExeption e){
+        }catch(IOException e){
             System.out.println("IOE");
-        }finally{
-            try{
-                if(br != null) br.close();
-            }catch(IOExeption e){
-                System.out.println("IOE");
-            }
-        }
+//        }finally{
+//            try{
+//                if(br != null) br.close();
+//            }catch(IOException e){
+//                System.out.println("IOE");
+//            }
+//        }
     }
+}
 }
