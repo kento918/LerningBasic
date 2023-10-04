@@ -1,39 +1,39 @@
 package SingleLinkedList;
 
 public class useSingleLinkedListArgo<E> {
-	private SingleLinkedListNodes<E> root;
+	private singleLinkedListNodes<E> root;
 
 	public useSingleLinkedListArgo(E[] a) {
-		this.setRoot(new SingleLinkedListNodes<E>(a));
+		this.setRoot(new singleLinkedListNodes<E>(a));
 	}
 
 	public useSingleLinkedListArgo() {
 		this.setRoot(null);
 	}
 
-	public SingleLinkedListNodes<E> getRoot() {
+	public singleLinkedListNodes<E> getRoot() {
 		return root;
 	}
 
-	public void setRoot(SingleLinkedListNodes<E> root) {
+	public void setRoot(singleLinkedListNodes<E> root) {
 		this.root = root;
 	}
 
 	public void printRoot() {
-		SingleLinkedListNodes<E> iterator = getRoot();
+		singleLinkedListNodes<E> iterator = getRoot();
 		System.out.println(iterator.toString());
 	}
 
-	public SingleLinkedListNodes<Integer> mergeTwoSortedLinkedLists(SingleLinkedListNodes<Integer> a,
-			SingleLinkedListNodes<Integer> b) {
+	public singleLinkedListNodes<Integer> mergeTwoSortedLinkedLists(singleLinkedListNodes<Integer> a,
+			singleLinkedListNodes<Integer> b) {
 		if (a.head.getData() == null)
 			return b;
 
 		if (b.head.getData() == null)
 			return a;
-		SingleLinkedListNodes<Integer> mergeNode = new SingleLinkedListNodes<Integer>(0);
+		singleLinkedListNodes<Integer> mergeNode = new singleLinkedListNodes<Integer>(0);
 		Node<Integer> head = mergeNode.head;
-		SingleLinkedListNodes<Integer> iterator = new SingleLinkedListNodes<>();
+		singleLinkedListNodes<Integer> iterator = new singleLinkedListNodes<>();
 		iterator = mergeNode;
 
 		while (a.head != null && b.head != null) {

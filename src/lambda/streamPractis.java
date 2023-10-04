@@ -1,5 +1,10 @@
-import java.util.*;
-import java.util.stream.*;
+package lambda;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class streamPractis {
     public static void main(String[] args) throws Exception {

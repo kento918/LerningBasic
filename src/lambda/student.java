@@ -1,5 +1,9 @@
-import java.util.*;
-import java.util.stream.*;
+package lambda;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 class Student{
     public int studentId;

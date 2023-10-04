@@ -1,7 +1,9 @@
-import java.util.*;
-import java.util.function.*;
+package testPractice;
 
-public class Main {
+import java.util.Arrays;
+import java.util.function.BiPredicate;
+
+public class isReverceArray {
     public static void main(String[] args) throws Exception {
         String[] list = {"a","b","c","D","e","f"};
         String[] list2 = deepCopy(list);

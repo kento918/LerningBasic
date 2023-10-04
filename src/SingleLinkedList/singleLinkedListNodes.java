@@ -1,17 +1,17 @@
 package SingleLinkedList;
 
-public class SingleLinkedListNodes<E> {
+public class singleLinkedListNodes<E> {
 	Node<E> head;
 
-	public SingleLinkedListNodes() {
+	public singleLinkedListNodes() {
 		this.head = null;
 	}
 
-	public SingleLinkedListNodes(E num) {
+	public singleLinkedListNodes(E num) {
 		this.head = new Node<>(num);
 	}
 
-	public SingleLinkedListNodes(E[] arr) {
+	public singleLinkedListNodes(E[] arr) {
 		makeLinkedList(arr);
 	}
 

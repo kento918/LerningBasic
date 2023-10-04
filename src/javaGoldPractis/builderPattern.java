@@ -1,3 +1,5 @@
+package javaGoldPractis;
+
 class builderPattern{
     public static void main(String[] args){
         human taro = new human.builder()
